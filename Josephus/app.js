@@ -22,9 +22,11 @@ const showOnPage = function(text, type) {
 
 let josephus = {
     display: function (knight, skips, start) {
-        console.log(`This is using ${knight} knights, ${skips+1} with skips, starting at (index) knight ${start}`)
-        showOnPage(`This is using ${knight} knights, ${skips+1} with skips, starting at (index) knight ${start}`,2)
-
+        console.log("Example: ")
+        showOnPage("Example: ", 2)
+        console.log(`This is using ${knight} knights, ${skips+1} with skips, starting at (index) knight ${start}!`)
+        showOnPage(`This is using ${knight} knights, ${skips+1} with skips, starting at (index) knight ${start}!`,1)
+        this.line()
     },
     line: function () {
         console.log("+==================+")
@@ -87,3 +89,4 @@ let josephus = {
 josephus.solution(2,23,47)
 josephus.solution(14, 1, 0)
 josephus.solution(11,2,1)
+josephus.solution(20,0,0)
