@@ -1,18 +1,22 @@
 const showOnPage = function(text, type) { 
+    //Checks if running on a console or webpage
     if ((typeof process !== 'undefined') && 
     (process.release.name.search(/node|io.js/) !== -1)) {
     } else {
         if(type == 1){
+            //Regular text
             let newParagraph = document.createElement("p")
             newParagraph.innerHTML = text
             let outputDiv = document.getElementById("output")
             outputDiv.append(newParagraph)
         }else if(type == 2) {
+            //Bold text
             let newParagraph = document.createElement('strong')
             newParagraph.innerHTML = text
             let outputDiv = document.getElementById("output")
             outputDiv.append(newParagraph)
         } else if(type == 3) {
+            //Makes a line
             let newParagraph = document.createElement('hr')
             let outputDiv = document.getElementById("output")
             outputDiv.append(newParagraph)
@@ -21,13 +25,15 @@ const showOnPage = function(text, type) {
 }
 
 let josephus = {
+    // Displays in both terminal and HTML 
     display: function (knight, skips, start) {
         console.log("Example: ")
         showOnPage("Example: ", 2)
-        console.log(`This is using ${knight} knights, ${skips+1} with skips, starting at (index) knight ${start}!`)
-        showOnPage(`This is using ${knight} knights, ${skips+1} with skips, starting at (index) knight ${start}!`,1)
+        console.log(`This is using ${knight} knights, ${skips+1} with skips, starting at (index) knight ${start}`)
+        showOnPage(`This is using ${knight} knights, ${skips+1} with skips, starting at (index) knight ${start}`,1)
         this.line()
     },
+    //Makes a line in the terminal
     line: function () {
         console.log("+==================+")
         showOnPage('',3)
